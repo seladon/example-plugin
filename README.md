@@ -1,8 +1,15 @@
-# Shopware 6 development template
+# Shopware6 plugin
+`git clone git@github.com:seladon/example-plugin.git`
 
-This repository is a template for local development and enables you to create a running Shopware 6 instance.
-Use this setup for developing directly on Shopware 6 or for developing plugins for Shopware 6.
+`cd example-plugin`
 
-The installation guide, together with the complete documentation, is available at [docs.shopware.com](https://docs.shopware.com/en/shopware-platform-dev-en/getting-started).
+`./psh.phar docker:start`
 
-The quickstart guide using this development template is located at [shopware/platform](https://github.com/shopware/platform#quickstart--installation)
+`./psh.phar docker:ssh`
+
+`./psh.phar install`
+
+To be sure that the installation succeeded, just open the following URL in your favorite browser: localhost:8000
+
+Admin part localhost:8000/admin
+admin:shopware
