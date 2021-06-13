@@ -1,0 +1,13 @@
+parameters:
+    level: 8
+    paths:
+        - src
+        - dev-ops/analyze/src
+        - dev-ops/analyze/tests
+        - public/index.php
+        - easy-coding-standard.php
+        - bin/console
+        - bin/setup
+    checkGenericClassInNonGenericObjectType: false
+    bootstrapFiles:
+        - dev-ops/analyze/vendor-bin/cs-fixer/vendor/autoload.php

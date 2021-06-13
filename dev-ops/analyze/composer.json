@@ -1,0 +1,43 @@
+{
+    "name": "shopware/analyze-tools",
+    "description": "A set of tools",
+    "type": "metapackage",
+    "license": "MIT",
+    "minimum-stability": "stable",
+    "require-dev": {
+        "bamarni/composer-bin-plugin": "1.4.1",
+        "phpstan/extension-installer": "^1.1.0",
+        "phpstan/phpstan": "^0.12.88",
+        "phpstan/phpstan-doctrine": "^0.12.34",
+        "phpstan/phpstan-phpunit": "^0.12.19",
+        "phpstan/phpstan-symfony": "^0.12.33"
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "@composer bin all install --ansi",
+            "rm vendor/bin/phpstan; ln -s ../phpstan/phpstan/phpstan vendor/bin/phpstan",
+            "rm vendor/bin/phpstan.phar; ln -s ../phpstan/phpstan/phpstan.phar vendor/bin/phpstan.phar"
+        ],
+        "post-update-cmd": [
+            "@composer bin all update --ansi",
+            "rm vendor/bin/phpstan; ln -s ../phpstan/phpstan/phpstan vendor/bin/phpstan",
+            "rm vendor/bin/phpstan.phar; ln -s ../phpstan/phpstan/phpstan.phar vendor/bin/phpstan.phar"
+        ]
+    },
+    "autoload": {
+        "psr-4": {
+            "Shopware\\Development\\Analyze\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Shopware\\Development\\Analyze\\Test\\": "tests/"
+        }
+    },
+    "config": {
+        "platform": {
+            "php": "7.4.0"
+        },
+        "sort-packages": true
+    }
+}
