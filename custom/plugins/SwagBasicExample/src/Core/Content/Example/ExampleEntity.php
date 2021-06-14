@@ -10,7 +10,7 @@ class ExampleEntity extends Entity
     use EntityIdTrait;
 
     /**
-     * @var int|null
+     * @var string|null
      */
     protected $id;
 
@@ -25,40 +25,44 @@ class ExampleEntity extends Entity
     protected $quantity;
 
     /**
-     * @var float|null
+     * @var int|null
      */
     protected $price;
 
     /**
-     * @return int|null
+     * @return string|null
      */
-    public function getId(): ?int
+    public function getId(): ?string
     {
         return $this->id;
     }
 
     /**
-     * @param int|null $id
+     * @param string|null $id
+     * @return ExampleEntity
      */
-    public function setId(?int $id): void
+    public function setId(?string $id): ExampleEntity
     {
         $this->id = $id;
+        return $this;
     }
 
     /**
-     * @return int|null
+     * @return string|null
      */
-    public function getProductId(): ?int
+    public function getProductId(): ?string
     {
         return $this->productId;
     }
 
     /**
      * @param int|null $productId
+     * @return ExampleEntity
      */
-    public function setProductId(?int $productId): void
+    public function setProductId(?int $productId): ExampleEntity
     {
         $this->productId = $productId;
+        return $this;
     }
 
     /**
@@ -71,25 +75,29 @@ class ExampleEntity extends Entity
 
     /**
      * @param int|null $quantity
+     * @return ExampleEntity
      */
-    public function setQuantity(?int $quantity): void
+    public function setQuantity(?int $quantity): ExampleEntity
     {
         $this->quantity = $quantity;
+        return $this;
     }
 
     /**
-     * @return float|null
+     * @return int|null
      */
-    public function getPrice(): ?float
+    public function getPrice(): ?int
     {
         return $this->price;
     }
 
     /**
-     * @param float|null $price
+     * @param int|null $price
+     * @return ExampleEntity
      */
-    public function setPrice(?float $price): void
+    public function setPrice(?int $price): ExampleEntity
     {
         $this->price = $price;
+        return $this;
     }
 }

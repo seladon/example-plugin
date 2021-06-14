@@ -6,6 +6,7 @@ use Shopware\Core\Framework\DataAbstractionLayer\EntityDefinition;
 use Shopware\Core\Framework\DataAbstractionLayer\Field\CreatedAtField;
 use Shopware\Core\Framework\DataAbstractionLayer\Field\IntField;
 use Shopware\Core\Framework\DataAbstractionLayer\Field\PriceDefinitionField;
+use Shopware\Core\Framework\DataAbstractionLayer\Field\PriceField;
 use Shopware\Core\Framework\DataAbstractionLayer\Field\UpdatedAtField;
 use Shopware\Core\Framework\DataAbstractionLayer\FieldCollection;
 use Shopware\Core\Framework\DataAbstractionLayer\Field\Flag\PrimaryKey;
@@ -14,9 +15,14 @@ use Shopware\Core\Framework\DataAbstractionLayer\Field\IdField;
 
 class ExampleDefinition extends EntityDefinition
 {
-    public const ENTITY_NAME = 'fast_order_items';
+    public const ENTITY_NAME = 'swag_example';
 
     public function getEntityName(): string
+    {
+        return self::ENTITY_NAME;
+    }
+
+    public function getEntityClass(): string
     {
         return ExampleEntity::class;
     }
@@ -28,7 +34,7 @@ class ExampleDefinition extends EntityDefinition
             (new IntField('customer_id', 'customerId'))->addFlags(new Required()),
             (new IntField('product_id', 'productId'))->addFlags(new Required()),
             (new IntField('quantity', 'quantity'))->addFlags(new Required()),
-            (new PriceDefinitionField('price', 'price'))->addFlags(new Required()),
+            (new IntField('price', 'price'))->addFlags(new Required()),
             (new CreatedAtField()),
             (new UpdatedAtField()),
         ]);

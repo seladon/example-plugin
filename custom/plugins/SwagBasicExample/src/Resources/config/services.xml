@@ -4,23 +4,22 @@
            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
            xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
     <services>
+        <service id="Swag\BasicExample\Core\Content\Example\ExampleDefinition">
+            <tag name="shopware.entity.definition" entity="swag_example" />
+        </service>
         <service id="Swag\BasicExample\Service\SomeService">
             <argument type="service" id="Shopware\Core\System\SystemConfig\SystemConfigService"/>
             <argument type="service" id="product.repository"/>
-            <argument type="service" id="fast_order_items.repository"/>
+            <argument type="service" id="swag_example.repository"/>
             <argument type="service" id="Shopware\Core\Checkout\Cart\SalesChannel\CartService"/>
             <argument type="service" id="Shopware\Core\System\SalesChannel\Context\SalesChannelContextPersister"/>
-        </service>
-        <service id="Swag\BasicExample\Core\Content\Example\ExampleDefinition">
-            <tag name="shopware.entity.definition" entity="fast_order_items" />
         </service>
         <service id="Swag\BasicExample\Storefront\Page\Product\Subscriber\ProductPageCriteriaSubscriber">
             <tag name="kernel.event_subscriber"/>
         </service>
         <service id="Swag\BasicExample\Controller\ProductController" public="true">
             <argument id="Shopware\Core\System\SystemConfig\SystemConfigService" type="service"/>
-            <argument id="Shopware\Storefront\Page\GenericPageLoader" type="service"/>
-            <argument id="Shopware\Core\Content\Cms\SalesChannel\SalesChannelCmsPageLoader" type="service"/>
+            <argument id="Swag\BasicExample\Service\SomeService" type="service"/>
             <call method="setContainer">
                 <argument type="service" id="service_container"/>
             </call>

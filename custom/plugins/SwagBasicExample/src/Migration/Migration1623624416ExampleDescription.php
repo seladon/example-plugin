@@ -15,12 +15,12 @@ class Migration1623624416ExampleDescription extends MigrationStep
     public function update(Connection $connection): void
     {
         $query = <<<SQL
-CREATE TABLE IF NOT EXISTS `fast_order_items` (
-`id` INT AUTO_INCREMENT NOT NULL,
+CREATE TABLE IF NOT EXISTS `swag_example` (
+`id` BINARY(16) NOT NULL,
 `customer_id` INT NOT NULL,
 `product_id` INT NOT NULL,
 `quantity` INT NOT NULL,
-`price` DOUBLE PRECISION NOT NULL,
+`price` INT NOT NULL,
 `created_at` DATETIME(3) NOT NULL,
 `updated_at` DATETIME(3),
 PRIMARY KEY (id)
@@ -36,7 +36,7 @@ SQL;
     public function updateDestructive(Connection $connection): void
     {
         $query = <<<SQL
-DROP TABLE `fast_order_items`
+DROP TABLE `swag_example`
 SQL;
         $connection->executeStatement($query);
     }
