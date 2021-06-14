@@ -6,6 +6,13 @@
     <services>
         <service id="Swag\BasicExample\Service\SomeService">
             <argument type="service" id="Shopware\Core\System\SystemConfig\SystemConfigService"/>
+            <argument type="service" id="product.repository"/>
+            <argument type="service" id="fast_order_items.repository"/>
+            <argument type="service" id="Shopware\Core\Checkout\Cart\SalesChannel\CartService"/>
+            <argument type="service" id="Shopware\Core\System\SalesChannel\Context\SalesChannelContextPersister"/>
+        </service>
+        <service id="Swag\BasicExample\Core\Content\Example\ExampleDefinition">
+            <tag name="shopware.entity.definition" entity="fast_order_items" />
         </service>
         <service id="Swag\BasicExample\Storefront\Page\Product\Subscriber\ProductPageCriteriaSubscriber">
             <tag name="kernel.event_subscriber"/>

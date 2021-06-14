@@ -21,7 +21,8 @@ CREATE TABLE IF NOT EXISTS `fast_order_items` (
 `product_id` INT NOT NULL,
 `quantity` INT NOT NULL,
 `price` DOUBLE PRECISION NOT NULL,
-`timestamp` DATETIME NOT NULL,
+`created_at` DATETIME(3) NOT NULL,
+`updated_at` DATETIME(3),
 PRIMARY KEY (id)
 )
     ENGINE = InnoDB
