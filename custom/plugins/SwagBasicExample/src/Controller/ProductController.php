@@ -12,6 +12,7 @@ use Shopware\Storefront\Controller\StorefrontController;
 use Shopware\Storefront\Page\GenericPageLoader;
 use Swag\BasicExample\Core\Content\Example\ExampleEntity;
 use Swag\BasicExample\Service\SomeService;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
