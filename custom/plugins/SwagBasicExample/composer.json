@@ -14,14 +14,14 @@
     },
     "extra": {
         "shopware-plugin-class": "Swag\\BasicExample\\SwagBasicExample",
-        "plugin-icon": "src/Resources/config/download.png",
+        "plugin-icon": "src/Resources/config/woocommerce-quick-order-webkul.png",
         "label": {
-            "de-DE": "Der angezeigte lesbare Name für das Plugin",
-            "en-GB": "The displayed readable name for the plugin"
+            "de-DE": "Schnelle Bestellung Plugin",
+            "en-GB": "Quick order plugin"
         },
         "description": {
-            "de-DE": "Beschreibung in der Administration für das Plugin",
-            "en-GB": "Description in the administration for this plugin"
+            "de-DE": "Ein Kunde kann mindestens 10 Produkte gleichzeitig kaufen. Nachdem der Kunde auf den Button „In den Warenkorb“ geklickt hat, werden alle Produkte in den Shopwares Warenkorb gelegt und der Kunde wird auf die Warenkorbseite weitergeleitet.",
+            "en-GB": "A customer can buy at least 10 products in the same time. After the customer clicks on “Add to shopping cart” button all products will be send to Shopwares shopping cart and the customer will be redirected to the shopping cart page.\n"
         }
     },
     "autoload": {
